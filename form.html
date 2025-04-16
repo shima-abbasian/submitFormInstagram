@@ -4,97 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فرم ثبت نام</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body dir="rtl">
-    <div class="container">
-        <h1>فرم مشخصات فردی</h1>
+    <div class="container mt-5">
+        <h1 class="text-center">فرم مشخصات فردی</h1>
         <form id="personal-info-form">
-            <label for="name">نام:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="lastname">نام خانوادگی:</label>
-            <input type="text" id="lastname" name="lastname" required>
-
-            <label for="email">ایمیل:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="mobile">شماره موبایل:</label>
-            <input type="tel" id="mobile" name="mobile" required>
-
-            <label for="address">آدرس:</label>
-            <textarea id="address" name="address" required></textarea>
-
-            <label for="postal-code">کدپستی:</label>
-            <input type="text" id="postal-code" name="postal-code" required>
-
-            <label for="instagram-id">آیدی اینستاگرام:</label>
-            <input type="text" id="instagram-id" name="instagram-id" required>
+            <div class="form-row mb-1">
+                <div class="form-group col-md-6">
+                    <label for="name">نام:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastname">نام خانوادگی:</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" required>
+                </div>
+            </div>
+            <div class="form-row mb-1">
+                <div class="form-group col-md-6">
+                    <label for="email">ایمیل:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="mobile">شماره موبایل:</label>
+                    <input type="tel" class="form-control" id="mobile" name="mobile" required>
+                </div>
+            </div>
+            <div class="form-group mb-1">
+                <label for="address">آدرس:</label>
+                <textarea class="form-control" id="address" name="address" required></textarea>
+            </div>
+            <div class="form-row mb-1">
+                <div class="form-group col-md-6">
+                    <label for="postal-code">کدپستی:</label>
+                    <input type="text" class="form-control" id="postal-code" name="postal-code" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="instagram-id">آیدی اینستاگرام:</label>
+                    <input type="text" class="form-control" id="instagram-id" name="instagram-id" required>
+                </div>
+            </div>
         </form>
 
-        <h1>فرم سوالات</h1>
+        <h1 class="text-center">فرم سوالات</h1>
         <form id="questions-form">
-            <label for="question1">سوال 1:</label>
-            <textarea id="question1" name="question1" required></textarea>
+            <div class="form-group mb-4">
+                <label for="question1">محصولات شما در چه بازه قیمتی هستن؟ آیا قیمت‌ها متغیرن یا ثابت؟
+                    :</label>
+                <textarea class="form-control" id="question1" name="question1" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question2">جنس شال‌ها و روسری‌هاتون از چه نوع پارچه‌هایی هست؟ (مثلاً نخی، حریر، ابریشم و ...)
+                    :</label>
+                <textarea class="form-control" id="question2" name="question2" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question3">ابعاد استاندارد محصولات شما چقدره؟ آیا ابعاد در مدل‌های مختلف فرق داره؟
+                    :</label>
+                <textarea class="form-control" id="question3" name="question3" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question4">محصولات شما چند رنگ دارن؟ مشتری می‌تونه رنگ مورد نظرش رو انتخاب کنه؟
+                    :</label>
+                <textarea class="form-control" id="question4" name="question4" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question5">مشتری‌ها از چه طریقی می‌تونن سفارش بدن؟ (دایرکت، لینک سایت، واتساپ و ...)
+                    :</label>
+                <textarea class="form-control" id="question5" name="question5" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question6">از چه روش‌هایی برای ارسال استفاده می‌کنید؟ پست، تیپاکس، پیک و ...
+                    :</label>
+                <textarea class="form-control" id="question6" name="question6" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question7">آیا تخفیف دارید؟ چه زمانی یا برای چه کسانی تخفیف ارائه می‌دید؟
+                    :</label>
+                <textarea class="form-control" id="question7" name="question7" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question8">سفارش‌ها معمولاً چند روزه ارسال می‌شن؟
+                    :</label>
+                <textarea class="form-control" id="question8" name="question8" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question9">امکان تعویض یا مرجوعی محصول وجود داره؟ در چه شرایطی؟
+                    :</label>
+                <textarea class="form-control" id="question9" name="question9" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question10">آیا محصولات شما ضمانت کیفیت یا رضایت مشتری دارن؟
+                    :</label>
+                <textarea class="form-control" id="question10" name="question10" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question11">امکان ارسال به خارج از کشور دارید؟ به چه کشورهایی؟
+                    :</label>
+                <textarea class="form-control" id="question11" name="question11" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question12">موجودی محصولات چطور اعلام می‌شه؟ آیا به‌روز هست؟
+                    :</label>
+                <textarea class="form-control" id="question12" name="question12" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question13">چه تضمینی بابت کیفیت کار ارائه می‌دید؟ چه چیزی محصولات شما رو متمایز می‌کنه؟
+                    :</label>
+                <textarea class="form-control" id="question13" name="question13" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question14">محصولات شما برای چه فصل‌هایی مناسب هستن؟
+                    :</label>
+                <textarea class="form-control" id="question14" name="question14" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question15">آیا فروش عمده یا همکاری با مزون‌ها و فروشگاه‌ها دارید؟
+                    :</label>
+                <textarea class="form-control" id="question15" name="question15" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question16">آیا بسته‌بندی خاص برای هدیه ارائه می‌دید؟ چطور هست؟
+                    :</label>
+                <textarea class="form-control" id="question16" name="question16" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question17">امکان خرید حضوری وجود داره؟ اگر بله، آدرس کجاست؟
+                    :</label>
+                <textarea class="form-control" id="question17" name="question17" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question18">مشتری‌ها چطور می‌تونن پرداخت انجام بدن؟ کارت به کارت، درگاه پرداخت و ...
+                    :</label>
+                <textarea class="form-control" id="question18" name="question18" required></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <label for="question19">هزینه ارسال چقدره؟ آیا بسته به مبلغ سفارش یا مقصد فرق داره؟
+                    :</label>
+                <textarea class="form-control" id="question19" name="question19" required></textarea>
+            </div>
+            
 
-            <label for="question2">سوال 2:</label>
-            <textarea id="question2" name="question2" required></textarea>
-
-            <label for="question3">سوال 3:</label>
-            <textarea id="question3" name="question3" required></textarea>
-
-            <label for="question4">سوال 4:</label>
-            <textarea id="question4" name="question4" required></textarea>
-
-            <label for="question5">سوال 5:</label>
-            <textarea id="question5" name="question5" required></textarea>
-
-            <label for="question6">سوال 6:</label>
-            <textarea id="question6" name="question6" required></textarea>
-
-            <label for="question7">سوال 7:</label>
-            <textarea id="question7" name="question7" required></textarea>
-
-            <label for="question8">سوال 8:</label>
-            <textarea id="question8" name="question8" required></textarea>
-
-            <label for="question9">سوال 9:</label>
-            <textarea id="question9" name="question9" required></textarea>
-
-            <label for="question10">سوال 10:</label>
-            <textarea id="question10" name="question10" required></textarea>
-
-            <label for="question11">سوال 11:</label>
-            <textarea id="question11" name="question11" required></textarea>
-
-            <label for="question12">سوال 12:</label>
-            <textarea id="question12" name="question12" required></textarea>
-
-            <label for="question13">سوال 13:</label>
-            <textarea id="question13" name="question13" required></textarea>
-
-            <label for="question14">سوال 14:</label>
-            <textarea id="question14" name="question14" required></textarea>
-
-            <label for="question15">سوال 15:</label>
-            <textarea id="question15" name="question15" required></textarea>
-
-            <label for="question16">سوال 16:</label>
-            <textarea id="question16" name="question16" required></textarea>
-
-            <label for="question17">سوال 17:</label>
-            <textarea id="question17" name="question17" required></textarea>
-
-            <label for="question18">سوال 18:</label>
-            <textarea id="question18" name="question18" required></textarea>
-
-            <label for="question19">سوال 19:</label>
-            <textarea id="question19" name="question19" required></textarea>
-
-            <label for="question20">سوال 20:</label>
-            <textarea id="question20" name="question20" required></textarea>
-
-            <button type="button" onclick="submitForms()">ثبت اطلاعات</button>
+            <button type="button" class="btn btn-success btn-block" onclick="submitForms()">ثبت اطلاعات</button>
         </form>
     </div>
 
