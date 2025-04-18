@@ -21,7 +21,7 @@ h1 {
 
 label {
     display: inline-block;
-    width: 48%;
+    width: auto;
     margin-bottom: 20px;
 }
 
@@ -50,4 +50,22 @@ button {
 
 button:hover {
     background-color: #218838;
+}
+
+/* — استایل wrapper دکمه‌ی استیکی — */
+.sticky-submit-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.sticky-submit-wrapper .btn {
+    width: 100%;
 }

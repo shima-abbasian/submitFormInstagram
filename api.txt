@@ -1,0 +1,15 @@
+var settings = {
+  "url": "https://api.holootech.com/user/first-register",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({
+    "form_data": "{\"name\": \"John Doe\", \"email\": \"john@example.com\", \"phone\": \"1234567890\"}"
+  }),
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

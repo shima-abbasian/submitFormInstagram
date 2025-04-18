@@ -141,18 +141,65 @@
                 <textarea class="form-control" id="question18" name="question18" required></textarea>
             </div>
             <div class="form-group mb-4">
-                <label for="question19">هزینه ارسال چقدره؟ آیا بسته به مبلغ سفارش یا مقصد فرق داره؟
-                    :</label>
+                <label for="question19">هزینه ارسال چقدره؟ آیا بسته به مبلغ سفارش یا مقصد فرق داره؟</label>
                 <textarea class="form-control" id="question19" name="question19" required></textarea>
             </div>
-            
 
-            <button type="button" class="btn btn-success btn-block" onclick="submitForms()">ثبت اطلاعات</button>
-        </form>
+            <!-- بخش دانلود PDF -->
+            <div class="form-group mb-4">
+                <label for="download-pdf">دانلود فایل راهنما (PDF):</label>
+                <a id="download-pdf"
+                   href="files/guide.pdf"
+                   download
+                   class="btn btn-info btn-block">
+                    دانلود PDF
+                </a>
+            </div>
+
+        <div class="sticky-submit-wrapper">
+            <button type="submit" form="questions-form" class="btn btn-success btn-block">
+                ثبت اطلاعات
+            </button>
+        </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        async function submitForms() {
+        $(document).ready(function() {
+            $('#questions-form').on('submit', function(e) {
+                e.preventDefault();
+                submitForms();
+            });
+        });
+
+        function submitForms() {
+            // اعتبارسنجی فیلدهای مشخصات فردی
+            const nameVal      = document.getElementById('name').value.trim();
+            const lastnameVal  = document.getElementById('lastname').value.trim();
+            const addressVal   = document.getElementById('address').value.trim();
+            const instagramVal = document.getElementById('instagram-id').value.trim();
+
+            if (!nameVal) {
+                alert('لطفاً نام را وارد کنید');
+                document.getElementById('name').focus();
+                return;
+            }
+            if (!lastnameVal) {
+                alert('لطفاً نام خانوادگی را وارد کنید');
+                document.getElementById('lastname').focus();
+                return;
+            }
+            if (!addressVal) {
+                alert('لطفاً آدرس را وارد کنید');
+                document.getElementById('address').focus();
+                return;
+            }
+            if (!instagramVal) {
+                alert('لطفاً آیدی اینستاگرام را وارد کنید');
+                document.getElementById('instagram-id').focus();
+                return;
+            }
+
             const personalInfo = {
                 name: document.getElementById('name').value,
                 lastname: document.getElementById('lastname').value,
@@ -160,7 +207,7 @@
                 mobile: document.getElementById('mobile').value,
                 address: document.getElementById('address').value,
                 postalCode: document.getElementById('postal-code').value,
-                instagramId: document.getElementById('instagram-id').value,
+                instagramId: document.getElementById('instagram-id').value
             };
 
             const questions = {
@@ -182,36 +229,30 @@
                 question16: document.getElementById('question16').value,
                 question17: document.getElementById('question17').value,
                 question18: document.getElementById('question18').value,
-                question19: document.getElementById('question19').value,
-                question20: document.getElementById('question20').value,
+                question19: document.getElementById('question19').value
             };
 
-            const data = {
-                personalInfo,
-                questions
+            var settings = {
+                "url": "https://api.holootech.com/user/first-register",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "data": JSON.stringify({
+                    "form_data": JSON.stringify({ personalInfo, questions })
+                })
             };
 
-            try {
-                const response = await fetch('https://api.example.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                });
-
-                if (response.ok) {
-                    const result = await response.json();
-                    console.log('Success:', result);
+            $.ajax(settings)
+                .done(function(response) {
+                    console.log('Success:', response);
                     alert('اطلاعات با موفقیت ارسال شد!');
-                } else {
-                    console.error('Error:', response.statusText);
+                })
+                .fail(function(xhr, status, error) {
+                    console.error('Error:', error);
                     alert('خطا در ارسال اطلاعات.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('خطا در ارسال اطلاعات.');
-            }
+                });
         }
     </script>
 </body>
